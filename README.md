@@ -83,8 +83,8 @@ cached in users' browser;
 - `stylelint --fix` - check and fix files with stylelint;
 - `build:dev` - execute development build;
 - `build:dev:analyzer` - execute development build with Webpack Bundle Analyzer stats;
-- `build:production` - execute production build;
-- `build:dev:production` - execute production build with Webpack Bundle Analyzer stats;
+- `build:prod` - execute production build;
+- `build:prod:analyzer` - execute production build with Webpack Bundle Analyzer stats;
 - `serve` - execute development build with Webpack DevServer;
 
 ## File Structure
