@@ -88,77 +88,77 @@ cached in users' browser;
 - `serve` - execute development build with Webpack DevServer;
 
 ## File Structure
-bundle
-src
-|_assets
-  |_favicons
-  |_fonts
-|_components
-  |_common
-|_contexts
-|_hooks
-|_pages
-|_scss
-|_static
-  |_index.html
-  |_main.jsx
-  |_main.scss
-|_utils
+bundle <br />
+src <br />
+|_assets <br />
+&nbsp;&nbsp;|_favicons <br />
+&nbsp;&nbsp;|_fonts <br />
+|_components <br />
+&nbsp;&nbsp;|_common <br />
+|_contexts <br />
+|_hooks <br />
+|_pages <br />
+|_scss <br />
+|_static <br />
+&nbsp;&nbsp;|_index.html <br />
+&nbsp;&nbsp;|_main.jsx <br />
+&nbsp;&nbsp;|_main.scss <br />
+|_utils <br />
 
 ## File Structure Example 
-bundle
-src
-|_assets
-  |_favicons
-    |_favicon.png
-  |_fonts
-    |_Roboto-Bold.ttf
-|_components
-  |_common
-    |_Button
-      |_Button.jsx		функция Button
-    |_Input
-      |_Input.jsx		функция Input
-  |_ProductList
-    |_List.jsx			функция ProductList
-  |_ProductProfile
-    |_Profile.jsx		функция ProductProfile
-  |_UserProfile
-    |_Avatar
-      |_images
-	|_avatar.png
-      |_Avatar.jsx		функция UserProfileAvatar
-      |_Avatar.lazy.jsx		функция LazyUserProfileAvatar
-      |_Avatar.module.scss
-    |_Description
-      |_images
-        |_background.png
-      |_Description.jsx		функция UserProfileDescription
-      |_Description.lazy.jsx	функция LazyUserProfileDescription
-      |_Description.module.scss
-    |_Profile.jsx		функция UserProfile
-    |_Profile.module.scss	
-|_contexts
-  |_ThemeContext.jsx
-|_hooks
-  |_useThemeContext.jsx
-|_pages
-  |_ProductListPage
-    |_ProductListPage.jsx	функция ProductListPage
-  |_ProductProfilePage
-    |_ProductProfilePage.jsx	функция ProductProfilePage
-  |_UserProfilePage
-    |_UserProfilePage.jsx	функция UserProfilePage
-|_scss
-  |_colors.scss
-  |_fonts.scss
-  |_mixins.scss
-  |_reset.scss
-|_static
-  |_index.html
-  |_main.jsx
-  |_main.scss
-|_utils
-  |_productListAPI.json
+bundle  <br />
+src  <br />
+|_assets  <br />
+&nbsp;&nbsp;|_favicons  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_favicon.png  <br />
+&nbsp;&nbsp;|_fonts  <br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;|_Roboto-Bold.ttf  <br />
+|_components  <br />
+&nbsp;&nbsp;|_common  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_Button <br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Button.jsx		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_Input  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Input.jsx		<br />
+&nbsp;&nbsp;|_ProductList  <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_List.jsx			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ProductProfile  <br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Profile.jsx		 <br /> 
+&nbsp;&nbsp;|_UserProfile <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_images <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_avatar.png <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.jsx		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.lazy.jsx		 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.module.scss <br />
+&nbsp;&nbsp;|_Description <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_images <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_background.png <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.jsx		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.lazy.jsx	 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.module.scss <br />
+&nbsp;&nbsp;|_Profile.jsx	 <br />
+&nbsp;&nbsp;|_Profile.module.scss <br />
+|_contexts <br />
+&nbsp;&nbsp;|_ThemeContext.jsx <br />
+|_hooks <br />
+&nbsp;&nbsp;|_useThemeContext.jsx <br />
+|_pages <br />
+&nbsp;&nbsp;|_ProductListPage <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ProductListPage.jsx	 <br />
+&nbsp;&nbsp;|_ProductProfilePage <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ProductProfilePage.jsx	 <br />
+&nbsp;&nbsp;|_UserProfilePage <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_UserProfilePage.jsx	 <br />
+|_scss <br />
+&nbsp;&nbsp;|_colors.scss <br />
+&nbsp;&nbsp;|_fonts.scss <br />
+&nbsp;&nbsp;|_mixins.scss <br />
+&nbsp;&nbsp;|_reset.scss <br />
+|_static <br />
+&nbsp;&nbsp;|_index.html <br />
+&nbsp;&nbsp;|_main.jsx <br />
+&nbsp;&nbsp;|_main.scss <br />
+|_utils <br />
+&nbsp;&nbsp;|_productListAPI.json <br />
 
 
