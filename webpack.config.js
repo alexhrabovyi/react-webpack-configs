@@ -47,7 +47,12 @@ module.exports = (env) => {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          isProd ? MiniCssExtractPlugin.loader : "style-loader",
+          isProd ? {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "/",
+            },
+          } : "style-loader",
           {
             loader: "css-loader",
             options: {
@@ -83,8 +88,27 @@ module.exports = (env) => {
         }
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|webp)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: `assets/images/[name].[contenthash].[ext]`,
+        },
+        use: isProd ? ['image-webpack-loader'] : [],
+      },
+      {
+        test: /\.svg$/i,
+        resourceQuery: { not: [/url/] },
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: { icon: true },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset/resource',
+        resourceQuery: /url/i,
         generator: {
           filename: `assets/images/[name].[contenthash].[ext]`,
         },
@@ -105,8 +129,8 @@ module.exports = (env) => {
     }),
     new FaviconsWebpackPlugin({
       logo: "./src/assets/favicons/favicon.png",
-      outputPath: path.resolve(__dirname + "/bundle/assets/favicons"),
-      prefix: '../assets/favicons/',
+      outputPath: "./assets/favicons",
+      prefix: './assets/favicons/',
       inject: true,
       favicons: {
         icons: {

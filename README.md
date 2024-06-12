@@ -1,6 +1,11 @@
 # React + React Router + SCSS webpack config 
 This is a config for React, React Router, SCSS that uses Webpack, ESLint, Stylelint, Babel and other tools.
 
+### Additional modules:
+- SVGR - https://react-svgr.com/
+- gh-pages - https://github.com/tschaub/gh-pages
+- classnames - https://github.com/JedWatson/classnames
+
 ## Features
 ### HTML
 - automatically creates HTML file;
@@ -20,7 +25,7 @@ Development:
 - creates source maps;
 
 Production:
-- creates separate bundle file and separate chunk files;
+- creates separate bundle files and separate chunk files;
 - minimizing;
 - adds vendor prefix by Autoprefixer;
 - source maps aren't created;
@@ -44,18 +49,18 @@ Production:
 - automatically executes `eslint --fix`. If any unfixed errors left, build doesn't get created;
 
 ### Images
-- automatically generates in bundle folder;
+- automatically generates to bundle folder;
 - file names with contenthash;
 
 Production:
 - minimizing;
 
 ### Fonts
-- automatically generates in bundle folder;
+- automatically generates to bundle folder;
 - file names with contenthash;
 
 ### Favicons 
-- automatically generates in bundle folder;
+- automatically generates to bundle folder;
 - automatically connects to HTML file;
 
 Development:
@@ -65,12 +70,12 @@ Production:
 - generates all kinds of favicons for better compatibility;
 
 ### Performance
-- creates separate vendor.js file that contains necessary node modules. Because it doesn't often change, it can be 
+- creates separate vendor.js file that contains necessary node modules. Because it doesn't often get changed, it can be 
 cached in users' browser;
-- file names depend on their content, so name changes only if content of that file changes;
+- file names depend on their content, so name gets changed only if content of that file changes;
 
 ### Webpack Bundle Analyzer
-- production and development build could be executed wtih Webpack Bundle Analyzer to see sizes of files;
+- production and development build can be executed with Webpack Bundle Analyzer to see sizes of files;
 
 ### Other
 - Webpack DevServer with HMR enabled;
@@ -86,6 +91,7 @@ cached in users' browser;
 - `build:prod` - execute production build;
 - `build:prod:analyzer` - execute production build with Webpack Bundle Analyzer stats;
 - `serve` - execute development build with Webpack DevServer;
+- `deploy` - create production build and deploy it on separate gh-pages branch to publish it on GitHub Pages;
 
 ## File Structure
 bundle <br />
