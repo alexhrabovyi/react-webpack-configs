@@ -1,6 +1,9 @@
 # React + React Router + SCSS webpack config 
 This is a config for React, React Router, SCSS that uses Webpack, ESLint, Stylelint, Babel and other tools.
 
+### Another config versions:
+React + React Router + Redux (RTK and React Redux) + SCSS: https://github.com/alexhrabovyi/react-router-scss-webpack-config/tree/react-router-redux
+
 ### Additional modules:
 - SVGR - https://react-svgr.com/
 - gh-pages - https://github.com/tschaub/gh-pages
