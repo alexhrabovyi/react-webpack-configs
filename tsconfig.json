@@ -1,6 +1,10 @@
 {
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ], // за какими файлами смотреть (ForkTsChecker использует)
   "compilerOptions": {
-    "outDir": "./dist/", // сомнительно
+    "strict": true,
     "sourceMap": true, // сурс мапы
     "noImplicitAny": true,
     "module": "ESNext",

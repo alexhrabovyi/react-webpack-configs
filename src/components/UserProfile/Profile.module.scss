@@ -1,0 +1,13 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+.link {
+  display: flex;
+  color: $blue;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.flex {
+  @include flex-center-center;
+}

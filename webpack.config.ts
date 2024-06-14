@@ -3,22 +3,26 @@ import type { Configuration } from 'webpack';
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import ReactRefreshTypeScript from 'react-refresh-typescript';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 interface EnvVariable {
   production: boolean,
   analyze?: boolean,
+  tscheck?: boolean,
 }
 
 export default (env: EnvVariable): Configuration => {
   const isProd = env.production;
   const isShowBundleAnalyzer = env.analyze;
+  const noEmitOnError = env.tscheck;
 
   const mode = isProd ? "production" : "development";
-  const entry = path.resolve(__dirname, 'src/static/main.jsx');
+  const entry = path.resolve(__dirname, 'src/static/main.tsx');
 
   const output = {
     publicPath: '/',
@@ -32,9 +36,17 @@ export default (env: EnvVariable): Configuration => {
   const module = {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
+        test: /\.([cm]?ts|tsx)$/,
         exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            getCustomTransformers: () => ({
+              before: [!isProd && ReactRefreshTypeScript()].filter(Boolean),
+            }),
+          }
+        },
       },
       {
         test: /\.m?jsx?$/,
@@ -131,7 +143,7 @@ export default (env: EnvVariable): Configuration => {
 
   // plugins 
 
-  const plugins = [
+  const plugins: Configuration["plugins"] = [
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname + '/bundle/index.html'),
       template: path.resolve(__dirname, 'src/static/index.html'),
@@ -146,13 +158,19 @@ export default (env: EnvVariable): Configuration => {
       inject: true,
       favicons: {
         icons: {
-          yandex: false
-        }
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          favicons: true,
+          windows: true,
+          yandex: false,
+        },
       }
     }),
   ]
 
   !isProd && plugins.push(new ReactRefreshWebpackPlugin());
+  (isProd || noEmitOnError) && plugins.push(new ForkTsCheckerWebpackPlugin());
   isShowBundleAnalyzer && plugins.push(new BundleAnalyzerPlugin());
 
   // devServer
@@ -171,7 +189,7 @@ export default (env: EnvVariable): Configuration => {
 
   // optimization
 
-  const optimization = {
+  const optimization: Configuration['optimization'] = {
     moduleIds: 'deterministic',
     runtimeChunk: 'single',
     splitChunks: {
