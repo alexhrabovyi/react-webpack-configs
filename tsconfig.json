@@ -2,18 +2,18 @@
   "include": [
     "src/**/*",
     "tests/**/*"
-  ], // за какими файлами смотреть (ForkTsChecker использует)
+  ],
   "compilerOptions": {
     "strict": true,
-    "sourceMap": true, // сурс мапы
-    "noImplicitAny": true,
+    "sourceMap": true,
     "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true, //для импортов без *
-    "esModuleInterop": true //для импортов без *
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
   },
   "ts-node": {
     "compilerOptions": {
