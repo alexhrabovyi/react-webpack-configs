@@ -35,17 +35,38 @@ export default (env: EnvVariable): Configuration => {
 
   const module = {
     rules: [
+      // {
+      //   test: /\.([cm]?ts|tsx)$/,
+      //   exclude: /node_modules/,
+      //   use: {
+      //     loader: 'ts-loader',
+      //     options: {
+      //       transpileOnly: true,
+      //       getCustomTransformers: () => ({
+      //         before: [!isProd && ReactRefreshTypeScript()].filter(Boolean),
+      //       }),
+      //     }
+      //   },
+      // },
       {
         test: /\.([cm]?ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'ts-loader',
+          loader: 'babel-loader',
           options: {
-            transpileOnly: true,
-            getCustomTransformers: () => ({
-              before: [!isProd && ReactRefreshTypeScript()].filter(Boolean),
-            }),
-          }
+            presets: [
+              [
+                '@babel/preset-env',
+                isProd && { "useBuiltIns": "usage", "corejs": "3.35.1" }
+              ].filter(Boolean),
+              [
+                '@babel/preset-react',
+                { runtime: 'automatic' },
+              ],
+              ['@babel/preset-typescript']
+            ],
+            plugins: [!isProd && require.resolve('react-refresh/babel')].filter(Boolean),
+          },
         },
       },
       {
