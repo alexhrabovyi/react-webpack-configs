@@ -2,7 +2,11 @@
 This is a config for React, React Router, SCSS that uses Webpack, ESLint, Stylelint, Babel and other tools.
 
 ### Another config versions:
-React + React Router + Redux (RTK and React Redux) + SCSS: https://github.com/alexhrabovyi/react-router-scss-webpack-config/tree/react-router-redux
+React + React Router + Redux (RTK and React Redux) + SCSS: https://github.com/alexhrabovyi/ts-jsx-react-webpack-configs/tree/react-router-redux
+Typescript + React + React Router + SCSS: https://github.com/alexhrabovyi/ts-jsx-react-webpack-configs/tree/ts-react-router
+
+There is also a version of TS config above that uses ts-loader instead of babel:
+https://github.com/alexhrabovyi/ts-jsx-react-webpack-configs/tree/ts-loader-versionux
 
 ### Additional modules:
 - SVGR - https://react-svgr.com/
@@ -90,9 +94,9 @@ cached in users' browser;
 - `stylelint` - check files with stylelint;
 - `stylelint --fix` - check and fix files with stylelint;
 - `build:dev` - execute development build;
-- `build:dev:analyzer` - execute development build with Webpack Bundle Analyzer stats;
+- `build:dev:analyze` - execute development build with Webpack Bundle Analyzer stats;
 - `build:prod` - execute production build;
-- `build:prod:analyzer` - execute production build with Webpack Bundle Analyzer stats;
+- `build:prod:analyze` - execute production build with Webpack Bundle Analyzer stats;
 - `serve` - execute development build with Webpack DevServer;
 - `deploy` - create production build and deploy it on separate gh-pages branch to publish it on GitHub Pages;
 
