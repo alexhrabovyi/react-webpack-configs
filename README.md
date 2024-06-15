@@ -1,7 +1,8 @@
-# React + React Router + SCSS webpack config 
-This is a config for React, React Router, SCSS that uses Webpack, ESLint, Stylelint, Babel and other tools.
+# Typescript + React + React Router + SCSS webpack config 
+This is a config for Typescript, React, React Router, SCSS that uses Webpack, ESLint, Stylelint, Babel and other tools.
 
 ### Another config versions:
+React + React Router + SCSS: https://github.com/alexhrabovyi/react-router-scss-webpack-config/tree/react-router-redux
 React + React Router + Redux (RTK and React Redux) + SCSS: https://github.com/alexhrabovyi/react-router-scss-webpack-config/tree/react-router-redux
 
 ### Additional modules:
@@ -34,7 +35,8 @@ Production:
 - source maps aren't created;
 - automatically executes `stylelint --fix`. If any unfixed errors left, build doesn't get created;
 
-### JS | JSX
+### TS | TSX | JS | JSX
+- Typescript support
 - React support
 - React Router support 
 - creates separate bundle and separate chunk files;
@@ -90,10 +92,11 @@ cached in users' browser;
 - `stylelint` - check files with stylelint;
 - `stylelint --fix` - check and fix files with stylelint;
 - `build:dev` - execute development build;
-- `build:dev:analyzer` - execute development build with Webpack Bundle Analyzer stats;
+- `build:dev:analyze` - execute development build with Webpack Bundle Analyzer stats;
 - `build:prod` - execute production build;
-- `build:prod:analyzer` - execute production build with Webpack Bundle Analyzer stats;
+- `build:prod:analyze` - execute production build with Webpack Bundle Analyzer stats;
 - `serve` - execute development build with Webpack DevServer;
+- `serve:tscheck` - execute development build with Webpack DevServer and TS errors checking;
 - `deploy` - create production build and deploy it on separate gh-pages branch to publish it on GitHub Pages;
 
 ## File Structure
@@ -110,7 +113,7 @@ src <br />
 |_scss <br />
 |_static <br />
 &nbsp;&nbsp;|_index.html <br />
-&nbsp;&nbsp;|_main.jsx <br />
+&nbsp;&nbsp;|_main.tsx <br />
 &nbsp;&nbsp;|_main.scss <br />
 |_utils <br />
 
@@ -125,39 +128,39 @@ src  <br />
 |_components  <br />
 &nbsp;&nbsp;|_common  <br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_Button <br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Button.jsx		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Button.tsx		<br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_Input  <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Input.jsx		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Input.tsx		<br />
 &nbsp;&nbsp;|_ProductList  <br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_List.jsx			<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_List.tsx			<br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_ProductProfile  <br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Profile.jsx		 <br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Profile.tsx		 <br /> 
 &nbsp;&nbsp;|_UserProfile <br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_Avatar <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_images <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_avatar.png <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.jsx		<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.lazy.jsx		 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.tsx		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.lazy.tsx		 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Avatar.module.scss <br />
 &nbsp;&nbsp;|_Description <br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_images <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_background.png <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.jsx		<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.lazy.jsx	 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.tsx		<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.lazy.tsx	 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Description.module.scss <br />
-&nbsp;&nbsp;|_Profile.jsx	 <br />
+&nbsp;&nbsp;|_Profile.tsx	 <br />
 &nbsp;&nbsp;|_Profile.module.scss <br />
 |_contexts <br />
-&nbsp;&nbsp;|_ThemeContext.jsx <br />
+&nbsp;&nbsp;|_ThemeContext.tsx <br />
 |_hooks <br />
-&nbsp;&nbsp;|_useThemeContext.jsx <br />
+&nbsp;&nbsp;|_useThemeContext.tsx <br />
 |_pages <br />
 &nbsp;&nbsp;|_ProductListPage <br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_ProductListPage.jsx	 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ProductListPage.tsx	 <br />
 &nbsp;&nbsp;|_ProductProfilePage <br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_ProductProfilePage.jsx	 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ProductProfilePage.tsx	 <br />
 &nbsp;&nbsp;|_UserProfilePage <br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_UserProfilePage.jsx	 <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_UserProfilePage.tsx	 <br />
 |_scss <br />
 &nbsp;&nbsp;|_colors.scss <br />
 &nbsp;&nbsp;|_fonts.scss <br />
@@ -165,7 +168,7 @@ src  <br />
 &nbsp;&nbsp;|_reset.scss <br />
 |_static <br />
 &nbsp;&nbsp;|_index.html <br />
-&nbsp;&nbsp;|_main.jsx <br />
+&nbsp;&nbsp;|_main.tsx <br />
 &nbsp;&nbsp;|_main.scss <br />
 |_utils <br />
 &nbsp;&nbsp;|_productListAPI.json <br />

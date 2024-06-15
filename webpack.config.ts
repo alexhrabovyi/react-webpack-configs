@@ -3,7 +3,6 @@ import type { Configuration } from 'webpack';
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import ReactRefreshTypeScript from 'react-refresh-typescript';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
@@ -35,21 +34,8 @@ export default (env: EnvVariable): Configuration => {
 
   const module = {
     rules: [
-      // {
-      //   test: /\.([cm]?ts|tsx)$/,
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: 'ts-loader',
-      //     options: {
-      //       transpileOnly: true,
-      //       getCustomTransformers: () => ({
-      //         before: [!isProd && ReactRefreshTypeScript()].filter(Boolean),
-      //       }),
-      //     }
-      //   },
-      // },
       {
-        test: /\.([cm]?ts|tsx)$/,
+        test: /\.([cm]?ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -64,26 +50,6 @@ export default (env: EnvVariable): Configuration => {
                 { runtime: 'automatic' },
               ],
               ['@babel/preset-typescript']
-            ],
-            plugins: [!isProd && require.resolve('react-refresh/babel')].filter(Boolean),
-          },
-        },
-      },
-      {
-        test: /\.m?jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                isProd && { "useBuiltIns": "usage", "corejs": "3.35.1" }
-              ].filter(Boolean),
-              [
-                '@babel/preset-react',
-                { runtime: 'automatic' },
-              ],
             ],
             plugins: [!isProd && require.resolve('react-refresh/babel')].filter(Boolean),
           },
