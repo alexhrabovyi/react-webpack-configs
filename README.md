@@ -2,8 +2,11 @@
 This is a config for Typescript, React, React Router, SCSS that uses Webpack, ESLint, Stylelint, Babel and other tools.
 
 ### Another config versions:
-React + React Router + SCSS: https://github.com/alexhrabovyi/react-router-scss-webpack-config/tree/react-router-redux
-React + React Router + Redux (RTK and React Redux) + SCSS: https://github.com/alexhrabovyi/react-router-scss-webpack-config/tree/react-router-redux
+React + React Router + SCSS: https://github.com/alexhrabovyi/ts-jsx-react-webpack-configs/tree/react-router
+React + React Router + Redux (RTK and React Redux) + SCSS: https://github.com/alexhrabovyi/ts-jsx-react-webpack-configs/tree/react-router-redux
+
+There is also a version of this config that uses ts-loader instead of babel:
+https://github.com/alexhrabovyi/ts-jsx-react-webpack-configs/tree/ts-loader-version
 
 ### Additional modules:
 - SVGR - https://react-svgr.com/
